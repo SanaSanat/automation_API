@@ -1,10 +1,11 @@
 import * as supertest from "supertest";
 const request = supertest("localhost:8001/api/v1");
 
-// export async function signUp(user:string | object | undefined){
-//     await request.post("/users/signup").send(user)
-// } //simple
-export async function signUp(user: string | object | undefined):Promise<any> {
+export function signUp2(user: string | object | undefined) {
+  return request.post("/users/signup").send(user);
+} //simple
+
+export async function signUp(user: string | object | undefined): Promise<any> {
   return new Promise((resolve, reject) => {
     request
       .post("/users/signup")
