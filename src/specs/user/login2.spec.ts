@@ -1,11 +1,11 @@
 import * as supertest from "supertest";
-import { getUser, user } from "../../data/user";
+import { getUser1, user } from "../../data/user";
 import { signUp, logIn, signUp2, deleteFunction } from "../../data/helpers";
 const request = supertest("localhost:8001/api/v1");
 
 describe("LOGIN", () => {
   describe("POSITIVE TEST", () => {
-    let userImport = getUser();
+    let userImport = getUser1();
     let cookie: string
     beforeEach(async ()=>{
         await signUp(userImport)

@@ -1,5 +1,5 @@
 import * as supertest from "supertest";
-import { getUser, user } from "../../data/user";
+import { getUser1, user } from "../../data/user";
 const request = supertest("localhost:8001/api/v1");
 
 describe("USER SIGNUP", () => {
@@ -34,7 +34,7 @@ describe("USER SIGNUP", () => {
       expect(res.body.status).toBe("success");
     });
     it("Create a new user using faker2", function (done) {
-      let userImport = getUser();
+      let userImport = getUser1();
       const res = request
         .post("/users/signup")
         .send(userImport)

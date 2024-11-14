@@ -27,6 +27,18 @@ export function deleteFunction(cookie: string): Promise<any> {
       });
     })
   }
+  export function tourFunction(cookie: string, tourData:object): Promise<any> {
+    return new Promise((resolve, reject) => {
+      request
+        .post("/tours")
+        .set("Cookie", cookie)
+        .send(tourData)
+        .end((err, res) => {
+          if (err) return reject(err);
+          else resolve(res);
+        });
+      })
+    }
 export async function logIn(user: string | object | undefined) {
   return await request.post("/users/login").send(user);
 }

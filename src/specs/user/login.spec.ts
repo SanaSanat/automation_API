@@ -1,11 +1,11 @@
 import * as supertest from "supertest";
-import { getUser, user } from "../../data/user";
+import { getUser1, user } from "../../data/user";
 import { signUp, logIn, signUp2 } from "../../data/helpers";
 const request = supertest("localhost:8001/api/v1");
 
 describe("LOGIN", () => {
   describe("POSITIVE TEST", () => {
-    let userImport = getUser();
+    let userImport = getUser1();
 
     it("login user", async () => {
       // const res = await request.post("/users/signup").send(userImport).expect(201);
@@ -55,10 +55,8 @@ describe("LOGIN", () => {
           expect(res.body.status).toBe("success");
           done()
         })
-      })
-      it.only("login user option 6 using .end without Promise", (done) =>{
-                
+      })                  
       })
     });
-  });
-});
+})
+

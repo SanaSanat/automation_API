@@ -8,6 +8,15 @@ export const user:User = {
     password: password,
     passwordConfirm: password
 };
+export function getUser1():User{
+    let password = faker.internet.password()
+    return {
+        name: faker.internet.username(),
+        email: faker.internet.email(),
+        password: password,
+        passwordConfirm: password,
+  };
+};
 export function getUser(role:string):User{
     let password = faker.internet.password()
     return {
